@@ -1,0 +1,18 @@
+<header class="text-gray-700 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="{{ .Site.BaseURL }}">
+        {{- partial "logo.html" . -}}
+      </a>
+
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        {{ range $key, $value := .Site.Social }}
+          <a href="{{ $value }}" class="mr-2 px-2 rounded cursor-pointer select-none hover:text-gray-900" rel="noopener noreferrer"
+          target="_blank"><button
+              class="k8s-blue-bg hover:bg-blue-400 text-white font-bold py-2 m-1 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">{{ $key | title }}
+          </button></a>
+        {{ end }}
+      </nav>
+
+  </div>
+</header>

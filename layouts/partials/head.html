@@ -1,0 +1,39 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css" />
+    <style>
+        .k8s-blue-bg {
+            background-color: #1f6aee
+        }
+
+        .list-content a:hover {
+            color: #1f6aee;
+        }
+
+        img[src$='#center'] {
+            display: block;
+            margin: 0.7rem auto;
+            /* you can replace the vertical '0.7rem' by
+                                    whatever floats your boat, but keep the
+                                    horizontal 'auto' for this to work */
+            /* whatever else styles you fancy here */
+        }
+
+        img[src$='#floatleft'] {
+            float: left;
+            margin: 0.7rem;
+            /* this margin is totally up to you */
+            /* whatever else styles you fancy here */
+        }
+
+        img[src$='#floatright'] {
+            float: right;
+            margin: 0.7rem;
+            /* this margin is totally up to you */
+            /* whatever else styles you fancy here */
+        }
+    </style>
+</head>

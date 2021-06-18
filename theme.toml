@@ -1,0 +1,12 @@
+name = "toc-page"
+license = "MIT"
+licenselink = "https://github.com/madhuakula/toc-page-hugo-theme/blob/master/LICENSE"
+description = "Minimal, one page, theme for table of contents page"
+homepage = "https://github.com/madhuakula/toc-page-hugo-theme"
+tags = ["clean", "minimal", "minimalist", "mobile", "one page", "personal", "responsive", "simple", "single page", "tailwind", "starter", "projects"]
+features = ["responsive", "portfolio", "landing"]
+min_version = "0.41.0"
+
+[author]
+  name = "Madhu Akula"
+  homepage = "https://madhuakula.com"

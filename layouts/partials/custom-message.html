@@ -1,0 +1,7 @@
+<div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+  {{ if .Site.Params.Description }}
+  <div class="p-4 items-center text-4xl leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+    <span class="font-semibold mr-2 text-center flex-auto">{{ .Site.Params.Description }}</span>
+  </div>
+  {{ end }}
+</div>

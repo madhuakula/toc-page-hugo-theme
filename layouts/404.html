@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Site.Title }}</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="flex justify-center">
+      <span class="ml-3 text-xl">404</span>
+      <br>
+      <span class="ml-3 text-xl">
+        <a href="{{ .Site.BaseURL }}">
+          Go back home
+        </a>
+    </span>
+    </div>
+  </body>
+</html>

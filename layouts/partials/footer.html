@@ -1,0 +1,37 @@
+{{ if .Site.Params.Copyright }}
+<footer class="text-gray-700 body-font mt-auto">
+    <div class="container px-5 py-2 mx-auto flex justify-center sm:flex-row flex-col">
+        <a href="{{ .Site.Params.Copyrighturl }}" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0 mt-4"> &copy; {{ .Site.Params.Copyright }}</p>
+        </a>
+    </div>
+</footer>
+{{ end }}
+
+{{ template "_internal/google_analytics_async.html" . }}
+
+<script>
+    const contentElements = document.querySelectorAll(".list-content > div");
+    function resetList() {
+        document.querySelectorAll(".list-items li").forEach((elt) => {
+            elt.classList.remove("border-l-4");
+        });
+    }
+    document.querySelectorAll(".list-items div").forEach((listItem) =>
+        listItem.addEventListener("click", () => {
+            resetList();
+            const id = listItem.getAttribute("id");
+            const parent = document.querySelector("#" + id + "-listitem");
+            if (parent) {
+                parent.classList.add("border-l-4");
+            }
+            contentElements.forEach((contentElement) => {
+                if (contentElement.classList.contains(`${id}-content`)) {
+                    contentElement.classList.remove("hidden");
+                    return;
+                }
+                contentElement.classList.add("hidden");
+            });
+        })
+    );
+</script>

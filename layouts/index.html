@@ -1,0 +1,62 @@
+{{ define "main" }}
+
+<section class="text-gray-700 body-font">
+    <div class="container px-5 py-12 mx-auto">
+        {{- partial "custom-message.html" . -}}
+
+
+        <div class="grid grid-cols-4 gap-4 -m-4">
+
+            {{ if ne .Params.Exclude true }}
+
+            <div class="bg-white shadow my-1">
+                <ul class="list-reset overflow-auto list-items" style="max-height: 500px;">
+                    {{ range where (.Site.Pages.ByParam "scenario") "Kind" "page" }}
+                    <li id="{{ .File.TranslationBaseName }}-listitem"
+                        class="{{if eq .Params.scenario 0}}border-l-4{{end}} border-blue-500">
+                        <div id="{{ .File.TranslationBaseName }}"
+                            class="block p-4 text-grey-darker font-bold border-purple hover:bg-grey-lighter border-r-4 cursor-pointer">
+                            {{.Title}}</div>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+
+
+
+            <div class="flex flex-wrap col-span-3 justify-center list-content px-16">
+
+
+                {{ range where .Site.Pages "Kind" "page" }}
+
+                <div class="{{ .File.TranslationBaseName }}-content {{if ne .Params.scenario 0}}hidden{{end}}">
+                    <div class="mb-8 leading-relaxed prose">
+                        {{ .Content }}
+                    </div>
+                    <br>
+                    <div class="border-b-4 py-4 lg:px-4 p-2 bg-white items-center text-indigo-100 leading-none lg:rounded-xl flex lg:inline-flex"
+                        role="alert">
+                        <span class="flex rounded-full k8s-blue-bg uppercase px-2 py-1 text-xs font-bold mr-3">{{
+                            .Params.Label }}</span>
+                        <ul class="font-semibold mr-2 text-left flex-auto text-black prose list-none">
+                            {{ range .Params.Notes }}
+                            <li>{{ . }}</li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+                {{ end }}
+
+
+            </div>
+
+            {{ end }}
+
+
+        </div>
+
+
+    </div>
+</section>
+
+{{ end }}
